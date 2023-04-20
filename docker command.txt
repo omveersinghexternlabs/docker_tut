@@ -1,15 +1,15 @@
 ----------------------------------docker-------------------------------------------
 
 build docker image -
- * first configure the dockerfile and add on new another file .gitignore for the securite data not push in the docker container.
+ * first configure the dockerfile and add on new another file .gitignore for the security data not push in the docker container.
  
- * command-  "docker build -t express-docker-image ."   (express-docker-image-"put image name") 
+ * command-  "docker build -t express-docker-image ."   (express-docker-image - "put image name") 
 
  * check docker image build or not -  "docker image ls"
 
  * after that building docker container with using this command- "docker run --rm -d -p 3000:3000 --name express-docker-container express-docker-image"             
 
-(Note-"express-docker-container" you want to given docker container name then put there.) after that putting docker image 
+(Note-"express-docker-container" you want to give docker container name then put there.) after that putting docker image 
 
 ---------after building the docker container----------------
 
