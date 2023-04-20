@@ -1,0 +1,62 @@
+----------------------------------docker-------------------------------------------
+
+build docker image -
+ * first configure the dockerfile and add on new another file .gitignore for the securite data not push in the docker container.
+ 
+ * command-  "docker build -t express-docker-image ."   (express-docker-image-"put image name") 
+
+ * check docker image build or not -  "docker image ls"
+
+ * after that building docker container with using this command- "docker run --rm -d -p 3000:3000 --name express-docker-container express-docker-image"             
+
+(Note-"express-docker-container" you want to given docker container name then put there.) after that putting docker image 
+
+---------after building the docker container----------------
+
+if you write the code in your server but they are not reflecting in docker. Docker give same response 
+
+so if you want whenever you change the source code then reflect the docker container also.
+
+steps- now we can bind up our filesystem or folder bind up to docker container. It is a volume binding. 
+
+ 
+ * command - "docker ps" this command showing the docker containers
+
+ * command - "docker stop containerId"  (container stop command)
+
+ * command - "docker exec -it containerId bash" (this command to enter the container with terminal) if you want to go inside container then enter this command
+ 
+ * command docker logs containerId (this command for the checking logs)
+
+
+------------------docker hub--------------------------
+ * first set the tag with this command- "docker tag docker-image-second:tagName sanjay022/repository:docker-testing"
+
+
+ * then push the docker container on docker hub with this command " docker push sanjay022/repository:docker-testing"
+
+
+
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname
+
+when start the docker container then command "docker compose up -d"
+
+when you check the logs then run the command "docker logs container-name"
+
+when you want to down stop your all container then run the command  "docker compose down"
+
+you tuber - coder gyan
+
+
+----------------------github container registry-------------------------------
+ 
+ add on github account with ghcr package (after echo put you PAT)
+
+ * echo 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 | docker login ghcr.io -u arvindthakur2 --password-stdin
+
+ * docker image "docker build -t ghcr.io/arvindthakur2/overwatch-docker-container/overwatch-docker-image:latest ."
+
+ * Clear your npm cache. Run the following command to clear your npm cache:
+   
+ *  npm cache clean --force
